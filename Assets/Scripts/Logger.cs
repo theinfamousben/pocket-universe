@@ -1,0 +1,28 @@
+using UnityEngine;
+
+public class Logger : MonoBehaviour
+{
+    public void AddLog(string message, int level = 0) // level: 0 = debug, 1 = info, 2 = warning, 3 = error
+    {
+        if (level < Constants.LOG_LEVEL) return;
+        
+        switch (level)
+        {
+            case 0:
+                Debug.Log(message);
+                break;
+            case 1:
+                Debug.Log(message);
+                break;
+            case 2:
+                Debug.LogWarning(message);
+                break;
+            case 3:
+                Debug.LogError(message);
+                break;
+            default:
+                Debug.Log(message + "\n\n Invalid log level: " + level);
+                break;
+        }
+    }
+}
