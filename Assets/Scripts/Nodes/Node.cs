@@ -1,9 +1,6 @@
+using TMPro;
 using UnityEngine;
 
-public class Node
+public class Node : MonoBehaviour
 {
-    public string id;
-    public string name;
-    public float visible;
-    public float unlocked;
 }

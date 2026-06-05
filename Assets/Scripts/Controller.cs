@@ -4,7 +4,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public static double Energy;
-    public List<Generator> generators;
+    public static List<Generator> Generators;
 
     [SerializeField] private TMPro.TMP_Text energyText;
     
@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour
     void Start()
     {
         Energy = 0;
-        generators = new List<Generator>();
+        Generators = new List<Generator>();
         energyText.text = "Energy: 0";
         
         AddGenerator("Energy", 100, 1, Resource.Energy);
@@ -21,7 +21,7 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Generator generator in generators)
+        foreach (Generator generator in Generators)
         {
             generator.RefreshTimer();
         }
@@ -42,7 +42,7 @@ public class Controller : MonoBehaviour
         }
     }
     
-    public static void SubtractEnergy(double amount, Resource resource)
+    public static void SubtractResource(double amount, Resource resource)
     {
         switch (resource)
         {
@@ -54,18 +54,20 @@ public class Controller : MonoBehaviour
                 break;
         }
     }
+    
+    public static Generator FindGenerator(string id) => Generators.Find(g => g.id == id);
 
-    public void AddGenerator(string _id, float _energyToGenerate, float _timeout, Resource _resource)
+    public static void AddGenerator(string _id, float _resourceToGenerate, float _timeout, Resource _resource)
     {
-        generators.Add(new Generator()
+        Generators.Add(new Generator()
         {
             id = _id,
-            energyToGenerate = _energyToGenerate,
+            energyToGenerate = _resourceToGenerate,
             timeout = _timeout,
             resource = _resource 
         });
         
-        generators[^1].Setup();
+        Generators[^1].Setup();
         
         Logger.AddLog($"Controller.AddGenerator: Added generator with id \"{_id}\"", 1);
     }
