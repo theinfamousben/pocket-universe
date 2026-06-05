@@ -6,6 +6,7 @@ public class Generator
     public float energyToGenerate;
     public float timeout;
     public float timer;
+    public Resource resource;
 
     public void Setup()
     {
@@ -14,7 +15,7 @@ public class Generator
     
     public void Generate()
     {
-        Controller.AddEnergy(energyToGenerate);
+        Controller.AddResource(energyToGenerate, Resource.Energy);
         timer = 0;
     }
 
