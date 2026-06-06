@@ -3,6 +3,7 @@ using TMPro;
 using UnityEditor.UI;
 using UnityEngine;
 
+//namespace Nodes;
 public class GeneratorNode : MonoBehaviour
 {
     public string id;
@@ -12,13 +13,17 @@ public class GeneratorNode : MonoBehaviour
 
     public TMP_Text nodeTitleObject;
     public TMP_Text nodeCostObject;
+    public GameObject nodeObject;
+    public GameObject parentNode;
     
     public int nodeLevel;
     public List<string> assignedGenerators;
     public float baseCost;
     public float costMultiplier;
+    public float baseResourceToGenerate;
     public Resource resource;
     public float baseTimeout;
+    public List<NodeBoost> boosts;
     
     
     public void BuyNode()
@@ -28,15 +33,21 @@ public class GeneratorNode : MonoBehaviour
         
         Controller.SubtractResource(baseCost * Mathf.Pow(costMultiplier, nodeLevel), Resource.Energy);
         nodeLevel++;
-        Controller.AddGenerator($"{id}_{nodeLevel}", 1, baseTimeout, resource);
+        Controller.AddGenerator($"{id}_{nodeLevel}", baseResourceToGenerate, baseTimeout, resource, boosts);
         assignedGenerators.Add($"{id}_{nodeLevel}");
-        
     }
     
     public void Update()
     {
-        nodeTitleObject.text = $"{title} (Level {nodeLevel})";
-        nodeCostObject.text = $"Cost: {(baseCost * Mathf.Pow(costMultiplier, nodeLevel)).ToString("F2")} Energy";
+        if (!visible)
+        {
+            nodeObject.transform.localScale = Vector3.zero;
+            return;
+        }
+        nodeObject.transform.localScale = Vector3.one;
+
+        nodeTitleObject.text = $"{title} (L{nodeLevel})";
+        nodeCostObject.text = $"{(baseCost * Mathf.Pow(costMultiplier, nodeLevel)):F2} Energy";
     }
 
 }

@@ -214,7 +214,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1103160444}
-  - {fileID: 661560199}
+  - {fileID: 471892229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -222,17 +222,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &438411259 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8256567703973282516, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-  m_PrefabInstance: {fileID: 1025868107}
+--- !u!224 &471892229 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3128305611096055497, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+  m_PrefabInstance: {fileID: 682061417}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,52 +448,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &661560198 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2973062460387464418, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-  m_PrefabInstance: {fileID: 1025868107}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &661560199 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3128305611096055497, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-  m_PrefabInstance: {fileID: 1025868107}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &661560200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661560198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b0f3741b77e54c5080772038c2bcdc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GeneratorNode
-  id: Energy
-  title: Energy
-  visible: 1
-  unlocked: 0
-  nodeTitleObject: {fileID: 438411259}
-  nodeCostObject: {fileID: 957178850}
-  nodeLevel: 0
-  assignedGenerators: []
-  baseCost: 10
-  costMultiplier: 0
-  resource: 0
-  baseTimeout: 1
---- !u!114 &957178850 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7465140048530898763, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-  m_PrefabInstance: {fileID: 1025868107}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!1001 &1025868107
+--- !u!1001 &682061417
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -507,37 +456,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 202014150}
     m_Modifications:
-    - target: {fileID: 2544333403151145615, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+    - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: id
+      value: Energy1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: title
+      value: Energy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: visible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: baseCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: unlocked
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2544333403151145615, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+    - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: baseTimeout
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2544333403151145615, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 661560200}
-    - target: {fileID: 2544333403151145615, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: costMultiplier
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2544333403151145615, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyNode
+    - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: boosts.Array.size
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2544333403151145615, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GeneratorNode, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2544333403151145615, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+    - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: 'boosts.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8c3de29b312fa4f0bab5f09dda24ceea, type: 2}
     - target: {fileID: 2973062460387464418, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: m_Name
-      value: Node
+      value: GeneratorNode
       objectReference: {fileID: 0}
     - target: {fileID: 3128305611096055497, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: m_Pivot.x
@@ -573,15 +530,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128305611096055497, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3128305611096055497, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3128305611096055497, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3128305611096055497, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -613,11 +570,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3128305611096055497, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 42.604523
+      value: -40.99695
       objectReference: {fileID: 0}
     - target: {fileID: 3128305611096055497, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.494926
+      value: 4.5000153
       objectReference: {fileID: 0}
     - target: {fileID: 3128305611096055497, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -638,10 +595,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2973062460387464418, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 661560200}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
 --- !u!1 &1071506888
 GameObject:

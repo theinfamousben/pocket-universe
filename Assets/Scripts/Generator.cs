@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Generator
@@ -7,6 +8,7 @@ public class Generator
     public float timeout;
     public float timer;
     public Resource resource;
+    public List<NodeBoost> boosts;
 
     public void Setup()
     {
@@ -15,7 +17,13 @@ public class Generator
     
     public void Generate()
     {
-        Controller.AddResource(energyToGenerate, Resource.Energy);
+        float _b = 1;
+        foreach (NodeBoost boost in boosts)
+        {
+            _b += boost.active ? boost.scale : 0;
+        }
+        
+        Controller.AddResource(energyToGenerate * _b, Resource.Energy);
         timer = 0;
     }
 

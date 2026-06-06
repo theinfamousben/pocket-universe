@@ -15,7 +15,7 @@ public class Controller : MonoBehaviour
         Generators = new List<Generator>();
         energyText.text = "Energy: 0";
         
-        AddGenerator("Energy", 100, 1, Resource.Energy);
+        AddGenerator("Energy", 100, 1, Resource.Energy, new List<NodeBoost>());
     }
 
     // Update is called once per frame
@@ -57,14 +57,15 @@ public class Controller : MonoBehaviour
     
     public static Generator FindGenerator(string id) => Generators.Find(g => g.id == id);
 
-    public static void AddGenerator(string _id, float _resourceToGenerate, float _timeout, Resource _resource)
+    public static void AddGenerator(string _id, float _resourceToGenerate, float _timeout, Resource _resource, List<NodeBoost> _boosts)
     {
         Generators.Add(new Generator()
         {
             id = _id,
             energyToGenerate = _resourceToGenerate,
             timeout = _timeout,
-            resource = _resource 
+            resource = _resource,
+            boosts = _boosts
         });
         
         Generators[^1].Setup();
