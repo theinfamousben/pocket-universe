@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Nodes;
 using UnityEngine;
 
 public class Generator
@@ -23,6 +24,7 @@ public class Generator
             _b += boost.active ? boost.scale : 0;
         }
         
+        Logger.AddLog($"Adding {energyToGenerate * _b} {resource} from generator {id}; Boost multiplier: {_b}", 0);
         Controller.AddResource(energyToGenerate * _b, Resource.Energy);
         timer = 0;
     }

@@ -70,6 +70,6 @@ public class Controller : MonoBehaviour
         
         Generators[^1].Setup();
         
-        Logger.AddLog($"Controller.AddGenerator: Added generator with id \"{_id}\"", 1);
+        Logger.AddLog($"Controller.AddGenerator: Added generator with id \"{_id}\"");
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SampleNodeBoost
   m_EditorClassIdentifier: Assembly-CSharp::NodeBoost
   id: SampleNodeBoost
-  scale: 1.5
+  scale: 0.5
   active: 0
