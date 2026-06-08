@@ -12,11 +12,12 @@ namespace Nodes
         public bool unlocked;
         public float cost;
         public NodeBoost relatedBoost;
+        
     
         public TMP_Text nodeTitleObject;
         public TMP_Text nodeCostObject;
         public GameObject nodeObject;
-    
+        public GameObject parentNode;
     
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -52,6 +53,16 @@ namespace Nodes
                     relatedBoost.active = true;
                 }
             }
+        }
+
+        public void DrawConnector()
+        {
+            LineRenderer lineRenderer = nodeObject.AddComponent<LineRenderer>();
+            lineRenderer.positionCount = 2;
+            lineRenderer.SetPosition(0, parentNode.transform.position);
+            lineRenderer.SetPosition(1, nodeObject.transform.position);
+            lineRenderer.startWidth = Constants.SKILLTREE_CONNECTOR_LINE_WIDTH;
+            lineRenderer.endWidth = Constants.SKILLTREE_CONNECTOR_LINE_WIDTH;
         }
     }
 }
