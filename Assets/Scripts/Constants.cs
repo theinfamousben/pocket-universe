@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Constants
 {
-    public const byte LOG_LEVEL = 0;
+    public const sbyte LOG_LEVEL = -1;
 
     public const float SKILLTREE_CONNECTOR_LINE_WIDTH = 0.5f;
+
 }
 
 public enum Resource
