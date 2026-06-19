@@ -25,7 +25,7 @@ public class Generator
         }
         
         Logger.AddLog($"Adding {energyToGenerate * _b} {resource} from generator {id}; Boost multiplier: {_b}", 0);
-        Controller.AddResource(energyToGenerate * _b, Resource.Energy);
+        Controller.AddResource(energyToGenerate * _b, resource);
         timer = 0;
     }
 

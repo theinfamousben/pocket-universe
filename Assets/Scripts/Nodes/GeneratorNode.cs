@@ -29,6 +29,8 @@ namespace Nodes
     
         public void BuyNode()
         {
+            if (CameraController.Dragging) return;
+            
             Logger.AddLog($"GeneratorNode.BuyNode ({id}): Requested buy node", 0);
             if (Controller.Energy < baseCost * Mathf.Pow(costMultiplier, nodeLevel)) return;
         

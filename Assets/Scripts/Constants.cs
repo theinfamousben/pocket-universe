@@ -11,6 +11,7 @@ public class Constants
 public enum Resource
 {
     Energy,
+    Quark
 }
 
 [CreateAssetMenu(menuName = "ScriptableObjects/NodeBoost")]
