@@ -680,6 +680,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: quarkCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781977582457093484, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: baseTimeout
       value: 1
       objectReference: {fileID: 0}
@@ -858,7 +862,7 @@ Transform:
   m_GameObject: {fileID: 1071506888}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 106.10001, y: 243.79999, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1360,7 +1364,7 @@ Transform:
   m_GameObject: {fileID: 1666076662}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 128.93982, y: 128.7143, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

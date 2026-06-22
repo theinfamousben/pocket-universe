@@ -25,6 +25,9 @@ namespace Nodes
         public Resource resource;
         public float baseTimeout;
         public List<NodeBoost> boosts;
+
+        public float energyCost;
+        public float quarkCost;
     
     
         public void BuyNode()
@@ -36,7 +39,16 @@ namespace Nodes
         
             Controller.SubtractResource(baseCost * Mathf.Pow(costMultiplier, nodeLevel), Resource.Energy);
             nodeLevel++;
-            Controller.AddGenerator($"{id}_{nodeLevel}", baseResourceToGenerate, baseTimeout, resource, boosts);
+            Controller.AddGenerator
+            (
+                $"{id}_{nodeLevel}", 
+                baseResourceToGenerate, 
+                baseTimeout, 
+                resource, 
+                boosts,
+                energyCost,
+                quarkCost
+            );
             assignedGenerators.Add($"{id}_{nodeLevel}");
         }
     

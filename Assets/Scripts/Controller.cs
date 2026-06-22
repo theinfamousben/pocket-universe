@@ -66,15 +66,26 @@ public class Controller : MonoBehaviour
     
     public static Generator FindGenerator(string id) => Generators.Find(g => g.id == id);
 
-    public static void AddGenerator(string _id, float _resourceToGenerate, float _timeout, Resource _resource, List<NodeBoost> _boosts)
+    public static void AddGenerator
+        (
+            string _id, 
+            float _amountToGenerate, 
+            float _timeout, 
+            Resource _resource, 
+            List<NodeBoost> _boosts,
+            float _energyCost,
+            float _quarkCost
+        )
     {
         Generators.Add(new Generator()
         {
             id = _id,
-            energyToGenerate = _resourceToGenerate,
+            amountToGenerate = _amountToGenerate,
             timeout = _timeout,
             resource = _resource,
-            boosts = _boosts
+            boosts = _boosts,
+            energyCost = _energyCost,
+            quarkCost = _quarkCost
         });
         
         Generators[^1].Setup();
