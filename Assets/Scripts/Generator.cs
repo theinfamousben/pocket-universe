@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Generator
 {
+    // The Logic for the generator is a bit weird, but changing it would take effort and im too lazy right now :p
+    // so to future me or anyone who dares to look at this shitty code, here is a little crash course:
+    // Each generator is instantiated by Controller, who sets all of the required variables and puts them in a single
+    // list. The list is only to be interacted with through Controller.FindGenerator, because it isn't organized at all.
+    // Why is it like this? Convenience. Writing this comment seems easier than reworking the entire Logic for generators.
+    
+    
     public string id;
     public float energyToGenerate;
     public float timeout;

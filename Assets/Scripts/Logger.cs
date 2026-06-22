@@ -2,12 +2,21 @@ using UnityEngine;
 
 public class Logger : MonoBehaviour
 {
-    public static void AddLog(string message, int level = 1) // level: -1 = trace, 0 = debug, 1 = info, 2 = warning, 3 = error
+    public static void AddLog(string message, int level = 1) 
+        // level:
+        // -1 = trace
+        // 0 = debug
+        // 1 = info
+        // 2 = warning
+        // 3 = error
     {
         if (level < Constants.LOG_LEVEL) return;
         
         switch (level)
         {
+            case -1:
+                Debug.Log(message);
+                break;
             case 0:
                 Debug.Log(message);
                 break;

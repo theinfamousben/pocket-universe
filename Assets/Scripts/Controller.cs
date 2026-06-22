@@ -11,7 +11,6 @@ public class Controller : MonoBehaviour
     [SerializeField] private TMP_Text energyText;
     [SerializeField] private TMP_Text quarkText;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Energy = 100;
@@ -22,7 +21,6 @@ public class Controller : MonoBehaviour
         //AddGenerator("Energy", 100, 1, Resource.Energy, new List<NodeBoost>());
     }
 
-    // Update is called once per frame
     void Update()
     {
         foreach (Generator generator in Generators)
