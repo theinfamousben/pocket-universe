@@ -1,23 +1,48 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Controller : MonoBehaviour
 {
     public static double Energy;
     public static double Quarks;
     public static List<Generator> Generators;
+    
+    [FormerlySerializedAs("TestModal")] public TestModal testModal;
 
     [SerializeField] private TMP_Text energyText;
     [SerializeField] private TMP_Text quarkText;
-    
+
     void Start()
     {
         Energy = 100;
         Generators = new List<Generator>();
         energyText.text = "Energy: 0";
         quarkText.text = "Quarks: 0";
-        
+
+        testModal.Close();
+        testModal.Open
+        (
+            title: "Test",
+            body: "test hahaha",
+
+            button1: new T_Property()
+            {
+                text = "Button 1",
+                color = Color.green,
+                action = () => Logger.AddLog("TestModal.Button1: Button 1 clicked", 0),
+                active = true
+            },
+            button2: new T_Property()
+            {
+                text = "Button 2",
+                color = Color.red,
+                action = () => Logger.AddLog("TestModal.Button2: Button 2 clicked", 0),
+                active = true
+            }
+        );
+
         //AddGenerator("Energy", 100, 1, Resource.Energy, new List<NodeBoost>());
     }
 
@@ -66,6 +91,8 @@ public class Controller : MonoBehaviour
     
     public static Generator FindGenerator(string id) => Generators.Find(g => g.id == id);
 
+    public GameObject ResolveGameObject(string id) => GameObject.Find(id);
+
     public static void AddGenerator
         (
             string _id, 
@@ -77,13 +104,15 @@ public class Controller : MonoBehaviour
             float _quarkCost
         )
     {
-        Generators.Add(new Generator()
+        Generators.Add(new Generator
         {
             id = _id,
             amountToGenerate = _amountToGenerate,
             timeout = _timeout,
             resource = _resource,
             boosts = _boosts,
+            
+            // put the costs last so it looks neat
             energyCost = _energyCost,
             quarkCost = _quarkCost
         });

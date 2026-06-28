@@ -25,6 +25,7 @@ namespace Nodes
         public Resource resource;
         public float baseTimeout;
         public List<NodeBoost> boosts;
+        public Sprite sprite;
 
         public float energyCost;
         public float quarkCost;
@@ -41,13 +42,15 @@ namespace Nodes
             nodeLevel++;
             Controller.AddGenerator
             (
-                $"{id}_{nodeLevel}", 
-                baseResourceToGenerate, 
-                baseTimeout, 
-                resource, 
-                boosts,
-                energyCost,
-                quarkCost
+                _id: $"{id}_{nodeLevel}", 
+                _amountToGenerate: baseResourceToGenerate, 
+                _timeout: baseTimeout, 
+                _resource: resource, 
+                _boosts: boosts,
+                
+                // put the costs last so it looks neat
+                _energyCost: energyCost,
+                _quarkCost: quarkCost
             );
             assignedGenerators.Add($"{id}_{nodeLevel}");
         }
@@ -64,6 +67,5 @@ namespace Nodes
             nodeTitleObject.text = $"{title} (L{nodeLevel})";
             nodeCostObject.text = $"{(baseCost * Mathf.Pow(costMultiplier, nodeLevel)):F2} Energy";
         }
-
     }
 }
