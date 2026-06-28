@@ -9,7 +9,8 @@ public class Controller : MonoBehaviour
     public static double Quarks;
     public static List<Generator> Generators;
     
-    [FormerlySerializedAs("TestModal")] public TestModal testModal;
+    [FormerlySerializedAs("TestModal")] public Modal_Test testModal;
+    public Modal_Alert alertModal;
 
     [SerializeField] private TMP_Text energyText;
     [SerializeField] private TMP_Text quarkText;
@@ -22,26 +23,7 @@ public class Controller : MonoBehaviour
         quarkText.text = "Quarks: 0";
 
         testModal.Close();
-        testModal.Open
-        (
-            title: "Test",
-            body: "test hahaha",
-
-            button1: new T_Property()
-            {
-                text = "Button 1",
-                color = Color.green,
-                action = () => Logger.AddLog("TestModal.Button1: Button 1 clicked", 0),
-                active = true
-            },
-            button2: new T_Property()
-            {
-                text = "Button 2",
-                color = Color.red,
-                action = () => Logger.AddLog("TestModal.Button2: Button 2 clicked", 0),
-                active = true
-            }
-        );
+        alertModal.Close();
 
         //AddGenerator("Energy", 100, 1, Resource.Energy, new List<NodeBoost>());
     }
