@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Constants
+public static class Constants
 {
     public const sbyte LOG_LEVEL = -1;
+
+
+    [Header("Color Defaults")] 
     
+    public static readonly Color BUTTON_COLOR_DEFAULT = Color.white;
+    public static readonly Color BUTTON_COLOR_IMPORTANT_GREEN = Color.green;
+    public static readonly Color BUTTON_COLOR_IMPORTANT_RED = Color.red;
 }
 
 public enum Resource

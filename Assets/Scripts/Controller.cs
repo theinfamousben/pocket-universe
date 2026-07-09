@@ -19,6 +19,7 @@ public class Controller : MonoBehaviour
     {
         Energy = 100;
         Generators = new List<Generator>();
+        
         energyText.text = "Energy: 0";
         quarkText.text = "Quarks: 0";
 
