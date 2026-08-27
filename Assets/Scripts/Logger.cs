@@ -1,8 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Logger : MonoBehaviour
 {
-    public static void AddLog(string message, int level = 1) 
+    public Dictionary<sbyte, string> logLevels = new Dictionary<sbyte, string>()
+    {
+        {-1, "Trace"},
+        { 0, "Debug" },
+        { 1, "Info" },
+        { 2, "Warning" },
+        { 3, "Error" }
+    };
+    
+    public static void AddLog(string message, string whoCalled, sbyte level = 1, bool createModal = false) 
         // level:
         // -1 = trace
         // 0 = debug
@@ -32,6 +42,34 @@ public class Logger : MonoBehaviour
             default:
                 Debug.Log(message + "\n\n Invalid log level: " + level);
                 break;
+        }
+
+        if (createModal)
+        {
+            Controller controller = GameObject.FindObjectOfType<Controller>();
+            if (controller == null)
+            {
+                Debug.LogError("Logger.AddLog: Controller not found for modal creation.");
+                return;
+            }
+            
+            controller.alertModal.Open
+            (
+                title: whoCalled,
+                body: message,
+                
+                button1: new T_Property()
+                {
+                    active = true,
+                    text = "OK",
+                    color = Constants.BUTTON_COLOR_IMPORTANT_GREEN,
+                    action = () => controller.alertModal.Close()
+                },
+                button2: new T_Property()
+                {
+                    active = false
+                }
+            );
         }
     }
 }

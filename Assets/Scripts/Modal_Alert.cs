@@ -25,7 +25,7 @@ public class Modal_Alert : MonoBehaviour
         T_Property button2
     )
     {
-        Logger.AddLog($"AlertModal.Open: Opening modal", 0);
+        Logger.AddLog($"Opening modal", $"Modal_Alert.Open", 0);
         
         titleText.text = title;
         bodyText.text = body;

@@ -8,6 +8,12 @@ public static class Constants
     public const sbyte LOG_LEVEL = -1;
 
 
+
+    public static readonly float CURRENCY_DISPLAY_Y_PADDING = 20;
+    public static readonly float LEFT_SIDEBAR_X_PADDING = 20;
+    public static readonly float RIGHT_SIDEBAR_X_PADDING = 20;
+    
+
     [Header("Color Defaults")] 
     
     public static readonly Color BUTTON_COLOR_DEFAULT = Color.white;
@@ -26,6 +32,13 @@ public enum MType
     Test,
     Alert
 }
+
+public enum SceneType
+{
+    Cutscene, // TODO: Implement
+    ModalSequence,
+}
+
 
 public static class EnumUtil {
     public static IEnumerable<T> GetValues<T>() {
@@ -48,3 +61,10 @@ public class T_Property
     public Action action;
     public bool active;
 }
+
+public enum NodeType
+{
+    Generator,
+    Upgrade
+}
+

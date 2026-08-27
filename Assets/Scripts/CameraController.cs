@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
         cam = cameraObject.GetComponent<Camera>();
         if (!cam)
         {
-            Logger.AddLog("CameraController.Start: Camera not found", 3);
+            Logger.AddLog("Camera not found", $"CameraController.Start", 3, true);
         }
     }
 

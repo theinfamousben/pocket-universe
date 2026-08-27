@@ -25,7 +25,7 @@ public class Modal_Test : MonoBehaviour
         T_Property button2
     )
     {
-        Logger.AddLog($"TestModal.Open: Opening modal", 0);
+        Logger.AddLog($"Opening modal", $"Modal_Test.Open", 0);
         
         titleText.text = title;
         bodyText.text = body;

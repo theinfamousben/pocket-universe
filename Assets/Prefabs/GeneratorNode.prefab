@@ -270,13 +270,18 @@ MonoBehaviour:
   nodeTitleObject: {fileID: 8256567703973282516}
   nodeCostObject: {fileID: 7465140048530898763}
   nodeObject: {fileID: 2973062460387464418}
+  parentNode: {fileID: 0}
   nodeLevel: 0
   assignedGenerators: []
   baseCost: 0
   costMultiplier: 0
+  baseResourceToGenerate: 0
   resource: 0
   baseTimeout: 0
   boosts: []
+  sprite: {fileID: 0}
+  energyCost: 0
+  quarkCost: 0
 --- !u!1 &4666018385696214398
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,8 +404,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1781977582457093484}
-        m_TargetAssemblyTypeName: GeneratorNode, Assembly-CSharp
-        m_MethodName: BuyNode
+        m_TargetAssemblyTypeName: Nodes.GeneratorNode, Assembly-CSharp
+        m_MethodName: ClickAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

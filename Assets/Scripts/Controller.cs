@@ -8,16 +8,26 @@ public class Controller : MonoBehaviour
     public static double Energy;
     public static double Quarks;
     public static List<Generator> Generators;
+    public static List<string> Nodes;
+    public static string SelectedNode;
     
     [FormerlySerializedAs("TestModal")] public Modal_Test testModal;
     public Modal_Alert alertModal;
+
+    [SerializeField] private double startingEnergy;
+    [SerializeField] private double startingQuarks;
+    
 
     [SerializeField] private TMP_Text energyText;
     [SerializeField] private TMP_Text quarkText;
 
     void Start()
     {
-        Energy = 100;
+        SelectedNode = "";
+        Energy = startingEnergy;
+        Quarks = startingQuarks;
+        
+        
         Generators = new List<Generator>();
         
         energyText.text = "Energy: 0";
@@ -51,7 +61,7 @@ public class Controller : MonoBehaviour
                 Quarks += amount;
                 break;
             default:
-                Logger.AddLog($"Controller.AddResource: Unknown Resource: {resource}", 3);
+                Logger.AddLog($"Unknown Resource: {resource}", $"Controller.AddResource", 3, true);
                 break;
         }
     }
@@ -67,7 +77,7 @@ public class Controller : MonoBehaviour
                 Quarks -= amount;
                 break;
             default: 
-                Logger.AddLog($"Controller.SubtractResource: Unknown Resource: {resource}", 3); 
+                Logger.AddLog($"Unknown Resource: {resource}", $"Controller.SubtractResource", 3, true); 
                 break;
         }
     }
@@ -102,6 +112,13 @@ public class Controller : MonoBehaviour
         
         Generators[^1].Setup();
         
-        Logger.AddLog($"Controller.AddGenerator: Added generator with id \"{_id}\"");
+        Logger.AddLog($"Added generator with id \"{_id}\"", $"Controller.AddGenerator");
     }
+    
+    public static void SetSelectedNode(string id)
+    {
+        Logger.AddLog($"Selected node {id}", $"Controller.SetSelectedNode");
+        SelectedNode = id;
+    }
+
 }

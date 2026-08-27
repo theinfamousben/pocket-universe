@@ -40,7 +40,7 @@ public class Generator
             _b += boost.active ? boost.scale : 0;
         }
         
-        Logger.AddLog($"Adding {amountToGenerate * _b} {resource} from generator {id}; Boost multiplier: {_b}", 0);
+        Logger.AddLog($"Adding {amountToGenerate * _b} {resource}; Boost multiplier: {_b}", $"Generator.Generate ({id})", 0);
         Controller.AddResource(amountToGenerate * _b, resource);
         timer = 0;
     }

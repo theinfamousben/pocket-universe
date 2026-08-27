@@ -24,7 +24,12 @@ namespace Nodes
             nodeTitleObject.text = title;
             nodeCostObject.text = cost.ToString("F2") + " Energy";
         }
-
+        
+        public void ClickAction()
+        {
+            if (Controller.SelectedNode == id) BuyNode();
+            else Controller.SetSelectedNode(id);
+        }
         void Update()
         {
             if (!visible)
@@ -38,7 +43,7 @@ namespace Nodes
 
         public void BuyNode()
         {
-            Logger.AddLog($"UpgradeNode.BuyNode ({id}): Requested buy node", 0);
+            Logger.AddLog($"Requested buy node", $"UpgradeNode.BuyNode ({id})", 0);
             if (Controller.Energy < cost) return;
 
             Controller.Energy -= cost;

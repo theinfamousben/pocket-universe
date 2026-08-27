@@ -29,16 +29,28 @@ namespace Nodes
 
         public float energyCost;
         public float quarkCost;
-    
-    
+
+        void Start()
+        {
+            DrawLineToParent();
+        }
+
+        public void ClickAction()
+        {
+            if (Controller.SelectedNode == id) BuyNode();
+            else Controller.SetSelectedNode(id);
+        }
+        
+        public float CalculateCost() => baseCost * Mathf.Pow(costMultiplier, nodeLevel);
+        
         public void BuyNode()
         {
             if (CameraController.Dragging) return;
             
-            Logger.AddLog($"GeneratorNode.BuyNode ({id}): Requested buy node", 0);
-            if (Controller.Energy < baseCost * Mathf.Pow(costMultiplier, nodeLevel)) return;
+            Logger.AddLog($"Requested buy node", $"GeneratorNode.BuyNode ({id})", 0);
+            if (Controller.Energy < CalculateCost()) return;
         
-            Controller.SubtractResource(baseCost * Mathf.Pow(costMultiplier, nodeLevel), Resource.Energy);
+            Controller.SubtractResource(CalculateCost(), Resource.Energy);
             nodeLevel++;
             Controller.AddGenerator
             (
@@ -67,5 +79,32 @@ namespace Nodes
             nodeTitleObject.text = $"{title} (L{nodeLevel})";
             nodeCostObject.text = $"{(baseCost * Mathf.Pow(costMultiplier, nodeLevel)):F2} Energy";
         }
+        
+        public void DrawLineToParent()
+        {
+            if (parentNode == null) return;
+
+            LineRenderer lr = GetComponent<LineRenderer>();
+            if (lr == null)
+            {
+                lr = gameObject.AddComponent<LineRenderer>();
+                lr.material = new Material(Shader.Find("Sprites/Default"));
+                lr.widthMultiplier = 0.05f;
+                lr.positionCount = 2;
+                lr.useWorldSpace = true;
+                lr.numCapVertices = 8;
+                lr.numCornerVertices = 8;
+                lr.startColor = Color.white;
+                lr.endColor = Color.white;
+            }
+
+            lr.positionCount = 2;
+            lr.SetPosition(0, transform.position);
+            lr.SetPosition(1, parentNode.transform.position);
+        }
+        
+        public string GetTitle() => title;
+        public float GetNodeLevel() => nodeLevel;
+        public float GetCost() => CalculateCost();
     }
 }
