@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+
+
 public static class Constants
 {
+    public static Dictionary<string, string> NodeInfoBodyText = new Dictionary<string, string>
+    {
+        { "Test", "Test text, blah blah blah" },
+    };
+    
     public const sbyte LOG_LEVEL = -1;
 
 
@@ -67,4 +74,3 @@ public enum NodeType
     Generator,
     Upgrade
 }
-

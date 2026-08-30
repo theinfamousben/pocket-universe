@@ -14,7 +14,7 @@ public class Generator
     public string id;
     public float amountToGenerate;
     public float timeout;
-    public float timer;
+    private float timer;
     public Resource resource;
     public List<NodeBoost> boosts;
 
@@ -25,8 +25,8 @@ public class Generator
     {
         timer = 0;
     }
-    
-    public void Generate()
+
+    private void Generate()
     {
         if (Controller.Energy < energyCost) return;
         if (Controller.Quarks < quarkCost) return;

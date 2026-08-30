@@ -3,51 +3,22 @@ using TMPro;
 
 namespace Nodes
 {
-    public class UpgradeNode : MonoBehaviour
+    public class UpgradeNode : Node
     {
-        public string id;
         public string generatorId;
-        public string title;
-        public bool visible;
-        public bool unlocked;
-        public float cost;
         public NodeBoost relatedBoost;
-        
-    
-        public TMP_Text nodeTitleObject;
-        public TMP_Text nodeCostObject;
-        public GameObject nodeObject;
-        public GameObject parentNode;
-    
-        void Start()
-        {
-            nodeTitleObject.text = title;
-            nodeCostObject.text = cost.ToString("F2") + " Energy";
-        }
-        
-        public void ClickAction()
-        {
-            if (Controller.SelectedNode == id) BuyNode();
-            else Controller.SetSelectedNode(id);
-        }
-        void Update()
-        {
-            if (!visible)
-            {
-                nodeObject.transform.localScale = Vector3.zero;
-                return;
-            }
-        
-            nodeObject.transform.localScale = Vector3.one;
-        }
 
-        public void BuyNode()
+        public override float CalculateCost() => baseCost;
+
+        public override void BuyNode()
         {
             Logger.AddLog($"Requested buy node", $"UpgradeNode.BuyNode ({id})", 0);
-            if (Controller.Energy < cost) return;
 
-            Controller.Energy -= cost;
-            unlocked = true;
+            if (nodeLevel >= 1) return; // Is it already unlocked?
+            if (Controller.Energy < CalculateCost()) return;
+            
+            Controller.SubtractResource(CalculateCost(), Resource.Energy);
+            nodeLevel++;
 
             foreach (Generator generator in Controller.Generators)
             {
@@ -57,5 +28,7 @@ namespace Nodes
                 }
             }
         }
+
+        public override string FormatTitle() => $"{title}";
     }
 }

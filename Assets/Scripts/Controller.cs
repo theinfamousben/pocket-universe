@@ -2,14 +2,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Nodes;
 
 public class Controller : MonoBehaviour
 {
     public static double Energy;
     public static double Quarks;
-    public static List<Generator> Generators;
-    public static List<string> Nodes;
-    public static string SelectedNode;
+    public static List<Generator> Generators = new List<Generator>();
+    public static List<Node> Nodes = new List<Node>();
+    public static string SelectedNode = "none";
     
     [FormerlySerializedAs("TestModal")] public Modal_Test testModal;
     public Modal_Alert alertModal;
@@ -23,12 +24,9 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
-        SelectedNode = "";
+        SelectedNode = "none";
         Energy = startingEnergy;
         Quarks = startingQuarks;
-        
-        
-        Generators = new List<Generator>();
         
         energyText.text = "Energy: 0";
         quarkText.text = "Quarks: 0";
@@ -83,6 +81,7 @@ public class Controller : MonoBehaviour
     }
     
     public static Generator FindGenerator(string id) => Generators.Find(g => g.id == id);
+    public static Node FindNodeById(string id) => Nodes.Find(n => n.id == id);
 
     public GameObject ResolveGameObject(string id) => GameObject.Find(id);
 
@@ -119,6 +118,12 @@ public class Controller : MonoBehaviour
     {
         Logger.AddLog($"Selected node {id}", $"Controller.SetSelectedNode");
         SelectedNode = id;
+    }
+
+    public static void RegisterNode(Node node)
+    {
+        if (Nodes == null) Nodes = new List<Node>();
+        Nodes.Add(node);
     }
 
 }

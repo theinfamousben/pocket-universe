@@ -11,7 +11,7 @@ public class HUDController : MonoBehaviour
     private float oldY;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         CurrencyDisplay = GameObject.Find("CurrencyDisplay");
         SidebarLeft = GameObject.Find("SidebarLeft");
@@ -21,14 +21,14 @@ public class HUDController : MonoBehaviour
         oldY = Screen.height;
     }
 
-    void AdjustPosition()
+    private void AdjustPosition()
     {
         CurrencyDisplay.transform.position = new Vector3(Screen.width / 2f, Screen.height - Constants.CURRENCY_DISPLAY_Y_PADDING, 0);
         SidebarLeft.transform.position = new Vector3(Constants.LEFT_SIDEBAR_X_PADDING, Screen.height / 2f, 0);
         SidebarRight.transform.position = new Vector3(Screen.width - Constants.RIGHT_SIDEBAR_X_PADDING, Screen.height / 2f, 0);
     }
 
-    void CheckForNewScreenDimensions()
+    private void CheckForNewScreenDimensions()
     {
         if (Screen.width != oldX || Screen.height != oldY)
         {
