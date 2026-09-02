@@ -1,3 +1,4 @@
+using System;
 using Nodes;
 using TMPro;
 using UnityEngine;
@@ -8,10 +9,12 @@ public class NodeInfo : MonoBehaviour
     public Button button;
     
     public TMP_Text titleText;
-    public TMP_Text bodyText;
+    public TMP_Text descriptionText;
+    public TMP_Text effectText;
 
     public string title;
-    public string body;
+    public string description;
+    public string effect;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,10 +36,21 @@ public class NodeInfo : MonoBehaviour
         var node = Controller.FindNodeById(Controller.SelectedNode);
         
         title = node.title;
-        body = Constants.NodeInfoBodyText[node.id];
+        description = Constants.NodeInfoDescriptionText[node.id];
+
+        effectText.gameObject.transform.localScale = Vector3.one;
+        try
+        {
+            effect = Constants.NodeInfoEffectText[node.id];
+        }
+        catch (Exception e)
+        {
+            effectText.gameObject.transform.localScale = Vector3.zero;
+        }
         
         titleText.text = title;
-        bodyText.text = body;
+        descriptionText.text = description;
+        effectText.text = effect;
         
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(node.ClickAction);

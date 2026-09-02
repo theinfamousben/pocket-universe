@@ -37,7 +37,7 @@ public class Generator
         float _b = 1;
         foreach (NodeBoost boost in boosts)
         {
-            _b += boost.active ? boost.scale : 0;
+            _b *= 1 + (boost.active ? boost.scale : 0);
         }
         
         Logger.AddLog($"Adding {amountToGenerate * _b} {resource}; Boost multiplier: {_b}", $"Generator.Generate ({id})", 0);

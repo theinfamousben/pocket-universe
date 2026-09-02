@@ -28,9 +28,14 @@ namespace Nodes
         public abstract float CalculateCost();
         public abstract void BuyNode();
         public abstract string FormatTitle();
+        public abstract void ExecuteUniqueUpdateFunction();
+        public abstract void ExecuteUniqueStartFunction();
         
-        void Start()
+        public void Start()
         {
+            ExecuteUniqueStartFunction();
+            nodeCostObject.gameObject.transform.localScale = Vector3.one;
+            
             Controller.RegisterNode(this);
             DrawLineToParent();
         }
@@ -40,9 +45,24 @@ namespace Nodes
             if (Controller.SelectedNode == id) BuyNode();
             else Controller.SetSelectedNode(id);
         }
+
     
         public void Update()
         {
+            if (parentNode)
+            {
+                if (parentNode.GetComponent<Node>().unlocked)
+                {
+                    unlocked = true;
+                    visible = true;
+                }
+                else
+                {
+                    unlocked = false;
+                    visible = false;
+                }
+            }
+            
             if (!visible)
             {
                 nodeObject.transform.localScale = Vector3.zero;
@@ -52,9 +72,11 @@ namespace Nodes
             
             nodeTitleObject.text = FormatTitle();
             nodeCostObject.text = $"{CalculateCost()} Energy";
+            
+            ExecuteUniqueUpdateFunction();
         }
-        
-        public void DrawLineToParent()
+
+        private void DrawLineToParent()
         {
             if (parentNode == null) return;
 

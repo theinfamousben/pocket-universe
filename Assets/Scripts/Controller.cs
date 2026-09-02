@@ -8,8 +8,8 @@ public class Controller : MonoBehaviour
 {
     public static double Energy;
     public static double Quarks;
-    public static List<Generator> Generators = new List<Generator>();
-    public static List<Node> Nodes = new List<Node>();
+    public static List<Generator> Generators = new();
+    public static List<Node> Nodes = new();
     public static string SelectedNode = "none";
     
     [FormerlySerializedAs("TestModal")] public Modal_Test testModal;

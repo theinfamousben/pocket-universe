@@ -29,6 +29,19 @@ namespace Nodes
             }
         }
 
+        public override void ExecuteUniqueStartFunction()
+        {
+            relatedBoost.active = false;
+        }
+        
+        public override void ExecuteUniqueUpdateFunction()
+        {
+            if (nodeLevel >= 1)
+            {
+                nodeCostObject.gameObject.transform.localScale = Vector3.zero;
+            }
+        }
+
         public override string FormatTitle() => $"{title}";
     }
 }

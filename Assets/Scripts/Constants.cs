@@ -7,9 +7,27 @@ using UnityEngine;
 
 public static class Constants
 {
-    public static Dictionary<string, string> NodeInfoBodyText = new Dictionary<string, string>
+    public static readonly Dictionary<string, string> NodeInfoDescriptionText = new Dictionary<string, string>
     {
         { "Test", "Test text, blah blah blah" },
+        
+        // GENERATORS
+        { "FundamentalInteraction", "Energy is the capacity of a physical system to perform work or cause a change."},
+        
+        // UPGRADES
+        { "StrongNuclearInteraction", "The strong nuclear interaction is the fundamental force responsible for holding atomic nuclei together."},
+        { "ElectromagneticInteraction", "The electromagnetic interaction is the fundamental force responsible for the behavior of charged particles and the propagation of electromagnetic waves."},
+        { "WeakNuclearInteraction", "The weak nuclear interaction is the fundamental force responsible for certain types of radioactive decay and particle interactions."},
+        { "GravitationalInteraction", "The gravitational interaction is the fundamental force responsible for the attraction between objects with mass."},
+    };
+
+    public static readonly Dictionary<string, string> NodeInfoEffectText = new Dictionary<string, string>
+    {
+        {"Test", "Test Blah blah"},
+        
+        // GENERATORS
+        { "FundamentalInteraction", "Generates a Base of 1 Energy per second."},
+        { "StrongNuclearInteraction", "Fundamental Interaction 30% more efficient"}
     };
     
     public const sbyte LOG_LEVEL = -1;

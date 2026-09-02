@@ -39,6 +39,16 @@ namespace Nodes
             );
             assignedGenerators.Add($"{id}_{nodeLevel}");
         }
+
+        public override void ExecuteUniqueStartFunction()
+        {
+            return;
+        }
+
+        public override void ExecuteUniqueUpdateFunction()
+        {
+            return;
+        }
         
         public override string FormatTitle() => $"{title} (L{nodeLevel})";
     }
