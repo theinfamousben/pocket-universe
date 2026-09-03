@@ -1,5 +1,5 @@
 # pocket-universe
-Forge little universes out of 1s and 0s in the palm of your hands!
+Uncover the confusing world of our universe; from quarks to atoms to stellar nebulae!
 
 
 ## Devlog Scheme:
