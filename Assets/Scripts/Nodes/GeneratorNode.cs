@@ -21,6 +21,7 @@ namespace Nodes
             if (CameraController.Dragging) return;
             
             Logger.AddLog($"Requested buy node", $"GeneratorNode.BuyNode ({id})", 0);
+            if (!unlocked) return;
             if (Controller.Energy < CalculateCost()) return;
         
             Controller.SubtractResource(CalculateCost(), Resource.Energy);

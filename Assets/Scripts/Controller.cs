@@ -33,6 +33,10 @@ public class Controller : MonoBehaviour
 
         testModal.Close();
         alertModal.Close();
+        
+        
+        // TO REMOVE
+        quarkText.gameObject.transform.localScale = Vector3.zero;
 
         //AddGenerator("Energy", 100, 1, Resource.Energy, new List<NodeBoost>());
     }

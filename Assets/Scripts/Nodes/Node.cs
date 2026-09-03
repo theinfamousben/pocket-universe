@@ -11,6 +11,7 @@ namespace Nodes
         public string title;
         public bool visible;
         public bool unlocked;
+        private Vector3 scale;
 
         public TMP_Text nodeTitleObject;
         public TMP_Text nodeCostObject;
@@ -33,8 +34,10 @@ namespace Nodes
         
         public void Start()
         {
+            scale = nodeType == NodeType.Generator ? Constants.NODE_SIZE_GENERATOR : Constants.NODE_SIZE_UPGRADE;
+            
             ExecuteUniqueStartFunction();
-            nodeCostObject.gameObject.transform.localScale = Vector3.one;
+            nodeCostObject.gameObject.transform.localScale = Constants.NODE_COST_TEXT_SCALE;
             
             Controller.RegisterNode(this);
             DrawLineToParent();
@@ -45,7 +48,6 @@ namespace Nodes
             if (Controller.SelectedNode == id) BuyNode();
             else Controller.SetSelectedNode(id);
         }
-
     
         public void Update()
         {
@@ -53,8 +55,12 @@ namespace Nodes
             {
                 if (parentNode.GetComponent<Node>().unlocked)
                 {
-                    unlocked = true;
                     visible = true;
+
+                    if (parentNode.GetComponent<Node>().nodeLevel >= 1)
+                    {
+                        unlocked = true;
+                    }
                 }
                 else
                 {
@@ -68,10 +74,10 @@ namespace Nodes
                 nodeObject.transform.localScale = Vector3.zero;
                 return;
             }
-            nodeObject.transform.localScale = Vector3.one;
+            nodeObject.transform.localScale = scale;
             
             nodeTitleObject.text = FormatTitle();
-            nodeCostObject.text = $"{CalculateCost()} Energy";
+            nodeCostObject.text = unlocked ? $"{CalculateCost()} Energy" : "Locked";
             
             ExecuteUniqueUpdateFunction();
         }

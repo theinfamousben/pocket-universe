@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: SampleNodeBoost
+  m_Name: GravitationalInteraction
   m_EditorClassIdentifier: Assembly-CSharp::NodeBoost
-  id: SampleNodeBoost
-  scale: 0.5
+  id: GravitationalInteraction
+  scale: 1
   active: 0

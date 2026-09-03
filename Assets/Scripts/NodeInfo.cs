@@ -54,6 +54,14 @@ public class NodeInfo : MonoBehaviour
         
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(node.ClickAction);
-        button.GetComponentInChildren<TMP_Text>().text = $"Buy ({node.CalculateCost()} Energy)";
+        button.GetComponentInChildren<TMP_Text>().text = node.unlocked 
+            ? node.nodeType == NodeType.Upgrade && node.nodeLevel >= 1 
+                ? "Unlocked" 
+                : $"Buy ({node.CalculateCost()} Energy)"
+            : "Locked";
+        // DISGUSTING nested ternary operator, but actually quite simple:
+        // If the node is locked, just return locked
+        // If the node is an upgrade and already bought, return "Unlocked" since we only want 1 node bought ever
+        // Otherwise, just return the Buy Text
     }
 }
