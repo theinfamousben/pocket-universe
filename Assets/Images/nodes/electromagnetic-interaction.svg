@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <title>Electromagnetic Interaction</title>
+  <rect width="256" height="256" rx="32" fill="#111827"/>
+  <rect x="8" y="8" width="240" height="240" rx="26" stroke="#334155" stroke-width="4"/>
+  <path d="M139 36L73 137H121L109 220L183 108H136L139 36Z" fill="#F8FAFC" stroke="#FACC15" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M51 76C68 58 88 48 110 45M205 180C188 198 168 208 146 211" stroke="#FACC15" stroke-width="6" stroke-linecap="round"/>
+  <path d="M46 185C62 201 81 210 102 212M210 71C194 55 175 46 154 43" stroke="#FDE68A" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 13"/>
+</svg>

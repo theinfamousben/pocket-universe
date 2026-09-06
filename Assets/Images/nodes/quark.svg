@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <title>Quark</title>
+  <rect width="256" height="256" rx="32" fill="#111827"/>
+  <rect x="8" y="8" width="240" height="240" rx="26" stroke="#334155" stroke-width="4"/>
+  <path d="M128 52L194 166H62L128 52Z" stroke="#F8FAFC" stroke-width="7" stroke-linejoin="round"/>
+  <circle cx="128" cy="52" r="22" fill="#FB7185"/>
+  <circle cx="62" cy="166" r="22" fill="#38BDF8"/>
+  <circle cx="194" cy="166" r="22" fill="#FACC15"/>
+  <circle cx="128" cy="128" r="12" fill="#F8FAFC"/>
+</svg>

@@ -359,6 +359,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5104891115292444437, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 086b85a5c6ce045e0b4bc1625e7551f2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -521,6 +525,10 @@ PrefabInstance:
       propertyPath: baseResourceToGenerate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2544333403151145615, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2973062460387464418, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
       propertyPath: m_Name
       value: Fundamental Interaction
@@ -605,7 +613,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5104891115292444437, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 11b07dc1c7ff645ce9ca8c44932fef07, type: 3}
+    - target: {fileID: 7256408397196973580, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7256408397196973580, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1019,8 +1036,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284741871
+  m_fontColor: {r: 0.93589723, g: 0.9716981, b: 0.38959593, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1182,6 +1199,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5104891115292444437, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: bfe30ae13d7104fc58449d3fe740ec65, type: 3}
     - target: {fileID: 6846679641206641485, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
       propertyPath: id
       value: GravitationalInteraction
@@ -2392,6 +2413,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5104891115292444437, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 3b6cf83fba6964d95a3ac8c8bdafce19, type: 3}
     - target: {fileID: 6846679641206641485, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
       propertyPath: id
       value: ElectromagneticInteraction
@@ -3655,6 +3680,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5104891115292444437, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 20662ce8bed364ad9ab5c7d61dfc4908, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4563,6 +4592,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1204618230}
     m_Modifications:
+    - target: {fileID: 2544333403151145615, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2973062460387464418, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
       propertyPath: m_Name
       value: Strong Nuclear Interaction
@@ -4667,6 +4700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NodeButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5104891115292444437, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 931a4b157f6944b6c9c18974b013aceb, type: 3}
     - target: {fileID: 6846679641206641485, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
       propertyPath: id
       value: StrongNuclearInteraction
@@ -4699,7 +4736,8 @@ PrefabInstance:
       propertyPath: relatedBoost
       value: 
       objectReference: {fileID: 11400000, guid: 452da393d882b4dd597bd7df110a9da3, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7256408397196973580, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5522,6 +5560,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5104891115292444437, guid: a29908a62c333554e8627ae03b1938b8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: cc5d47a622d3e446692e3486790aa8a6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5679,6 +5721,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1204618230}
     m_Modifications:
+    - target: {fileID: 2544333403151145615, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2973062460387464418, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
       propertyPath: m_Name
       value: Weak Nuclear Interaction
@@ -5783,6 +5829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NodeButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5104891115292444437, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: 0f17f5214e46740fe80df8d1a4d18d94, type: 3}
     - target: {fileID: 6846679641206641485, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
       propertyPath: id
       value: WeakNuclearInteraction
@@ -5815,7 +5865,8 @@ PrefabInstance:
       propertyPath: relatedBoost
       value: 
       objectReference: {fileID: 11400000, guid: b2a1dfca06dd649fd8d4e41582936e7c, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7256408397196973580, guid: aec9d3d1df66f4fc1a9f9a6d8a86d615, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

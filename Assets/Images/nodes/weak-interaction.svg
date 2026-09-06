@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <title>Weak Interaction</title>
+  <rect width="256" height="256" rx="32" fill="#111827"/>
+  <rect x="8" y="8" width="240" height="240" rx="26" stroke="#334155" stroke-width="4"/>
+  <circle cx="93" cy="128" r="21" fill="#F8FAFC"/>
+  <circle cx="163" cy="128" r="21" fill="#F8FAFC"/>
+  <path d="M116 128H140" stroke="#A78BFA" stroke-width="9" stroke-linecap="round" stroke-dasharray="3 13"/>
+  <path d="M78 83C96 63 126 56 151 66C175 75 190 97 191 122" stroke="#A78BFA" stroke-width="7" stroke-linecap="round"/>
+  <path d="M191 122L176 111M191 122L178 137" stroke="#A78BFA" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M78 173C96 193 126 200 151 190C175 181 190 159 191 134" stroke="#C4B5FD" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 12"/>
+</svg>

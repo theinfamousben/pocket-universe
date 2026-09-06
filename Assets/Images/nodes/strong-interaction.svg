@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <title>Strong Interaction</title>
+  <rect width="256" height="256" rx="32" fill="#111827"/>
+  <rect x="8" y="8" width="240" height="240" rx="26" stroke="#334155" stroke-width="4"/>
+  <circle cx="128" cy="128" r="25" fill="#F8FAFC"/>
+  <path d="M128 39V93M128 163V217M39 128H93M163 128H217" stroke="#F97316" stroke-width="17" stroke-linecap="round"/>
+  <path d="M128 39L113 59M128 39L143 59M217 128L197 113M217 128L197 143M128 217L113 197M128 217L143 197M39 128L59 113M39 128L59 143" stroke="#F97316" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="128" cy="128" r="67" stroke="#FDBA74" stroke-width="4" stroke-dasharray="2 12"/>
+</svg>

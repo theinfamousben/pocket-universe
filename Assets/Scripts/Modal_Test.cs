@@ -17,7 +17,6 @@ public class Modal_Test : MonoBehaviour
 
     public void Open
     (
-        
         string title,
         string body,
 

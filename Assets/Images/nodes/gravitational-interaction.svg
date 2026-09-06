@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <title>Gravitational Interaction</title>
+  <rect width="256" height="256" rx="32" fill="#111827"/>
+  <rect x="8" y="8" width="240" height="240" rx="26" stroke="#334155" stroke-width="4"/>
+  <circle cx="128" cy="83" r="28" fill="#F8FAFC"/>
+  <path d="M128 111V192" stroke="#34D399" stroke-width="9" stroke-linecap="round"/>
+  <path d="M103 172L128 198L153 172" stroke="#34D399" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M48 149C68 133 89 126 111 126M145 126C167 126 188 133 208 149M45 178C69 159 95 151 128 151C161 151 187 159 211 178" stroke="#6EE7B7" stroke-width="5" stroke-linecap="round"/>
+  <path d="M61 207C82 188 104 181 128 181C152 181 174 188 195 207" stroke="#6EE7B7" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 12"/>
+</svg>
