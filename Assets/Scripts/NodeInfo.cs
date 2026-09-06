@@ -32,7 +32,8 @@ public class NodeInfo : MonoBehaviour
             return;
         }
         
-        gameObject.transform.localScale = Vector3.one;
+        
+        gameObject.transform.localScale = Constants.NODEINFO_SCALE;
         var node = Controller.FindNodeById(Controller.SelectedNode);
         
         title = node.title;
@@ -63,5 +64,14 @@ public class NodeInfo : MonoBehaviour
         // If the node is locked, just return locked
         // If the node is an upgrade and already bought, return "Unlocked" since we only want 1 node bought ever
         // Otherwise, just return the Buy Text
+        button.interactable = node.unlocked
+            ? node.nodeType == NodeType.Upgrade && node.nodeLevel >= 1
+                ? false
+                : true
+            : false;
+        // ANOTHER disgusting nested ternary operator, but still, qutite simple:
+        // If the node is locked, just return false
+        // If the node is an upgrade and already bought, return false since we only want 1 node bought ever
+        // Otherwise, just return true
     }
 }

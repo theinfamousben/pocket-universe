@@ -16,6 +16,7 @@ namespace Nodes
 
             if (nodeLevel >= 1) return; // Is it already unlocked?
             if (Controller.Energy < CalculateCost()) return;
+            if (!unlocked) return;
             
             Controller.SubtractResource(CalculateCost(), Resource.Energy);
             nodeLevel++;

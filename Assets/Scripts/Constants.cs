@@ -41,6 +41,7 @@ public static class Constants
     public static readonly Vector3 NODE_SIZE_GENERATOR = new Vector3( 1f, 1f, 1f );
     public static readonly Vector3 NODE_SIZE_UPGRADE = new Vector3( 0.65f, 0.65f, 0.65f );
     public static readonly Vector3 NODE_COST_TEXT_SCALE = new Vector3( 0.5f, 0.5f, 0.5f );
+    public static readonly Vector3 NODEINFO_SCALE = new Vector3( 2f, 2f, 2f );
     
     public static readonly sbyte LOG_LEVEL = -1;
 
@@ -51,6 +52,11 @@ public static class Constants
     public static readonly Color BUTTON_COLOR_DEFAULT = Color.white;
     public static readonly Color BUTTON_COLOR_IMPORTANT_GREEN = Color.green;
     public static readonly Color BUTTON_COLOR_IMPORTANT_RED = Color.red;
+
+    public static readonly Color NODE_BUTTON_COLOR_DEFAULT = new Color(1f, 1f, 1f, 1f);
+    public static readonly Color NODE_BUTTON_COLOR_DISABLED = new Color(0.7843137255f, 0.7843137255f, 0.7843137255f, 0.5019607843f);
+    public static readonly Color NODE_BUTTON_COLOR_HIGHLIGHTED = new Color(1f, 1f, 1f, 1f);
+    public static readonly Color NODE_BUTTON_COLOR_SELECTED = new Color(0f, 1f, 1f, 1f);
 }
 
 public enum Resource
