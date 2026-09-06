@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <title>Baryon Number</title>
+  <rect width="256" height="256" rx="32" fill="#111827"/>
+  <rect x="8" y="8" width="240" height="240" rx="26" stroke="#334155" stroke-width="4"/>
+  <path d="M68 128C68 91 95 63 128 63C161 63 188 91 188 128C188 165 161 193 128 193C95 193 68 165 68 128Z" stroke="#F8FAFC" stroke-width="6"/>
+  <path d="M169 72L190 78L181 98" stroke="#4ADE80" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="103" cy="111" r="24" fill="#FB7185"/>
+  <circle cx="153" cy="111" r="24" fill="#38BDF8"/>
+  <circle cx="128" cy="153" r="24" fill="#FACC15"/>
+  <path d="M116 123L140 123M113 135L128 147M143 135L128 147" stroke="#F8FAFC" stroke-width="5" stroke-linecap="round"/>
+</svg>

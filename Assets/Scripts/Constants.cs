@@ -22,6 +22,7 @@ public static class Constants
         { "ElectromagneticInteraction", "The electromagnetic interaction is the fundamental force responsible for the behavior of charged particles and the propagation of electromagnetic waves."},
         { "WeakNuclearInteraction", "The weak nuclear interaction is the fundamental force responsible for certain types of radioactive decay and particle interactions."},
         { "GravitationalInteraction", "The gravitational interaction is the fundamental force responsible for the attraction between objects with mass."},
+        { "BaryonNumber", "The baryon number is a conserved quantum number that represents the difference between the number of baryons and antibaryons in a system."},
     };
 
     public static readonly Dictionary<string, string> NodeInfoEffectText = new Dictionary<string, string>

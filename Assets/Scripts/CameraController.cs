@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
@@ -8,8 +9,10 @@ public class CameraController : MonoBehaviour
     private Camera cam;
     public static bool Dragging;
     private Vector3 lastCameraPos;
+    private Vector2 dragStartScreenPos;
 
     [SerializeField] private float epsilon;
+    [SerializeField] private float dragThreshold = 6f;
     [SerializeField] float scrollSpeed;
     [SerializeField] private float minZoom;
     [SerializeField] private float maxZoom;
@@ -32,12 +35,28 @@ public class CameraController : MonoBehaviour
 
     void GetMouseInput()
     {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            dragStartScreenPos = Mouse.current.position.ReadValue();
+            Dragging = false;
+        }
+
         if (Mouse.current.leftButton.isPressed)
         {
             Vector2 pos = Mouse.current.position.ReadValue();
-            
-            if (!Dragging && lastCameraPos != cam.ScreenToWorldPoint(pos))
+
+            if (!Dragging)
             {
+                if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                {
+                    return;
+                }
+
+                if (Vector2.Distance(dragStartScreenPos, pos) < dragThreshold)
+                {
+                    return;
+                }
+
                 Dragging = true;
                 lastCameraPos = cam.ScreenToWorldPoint(pos);
             }

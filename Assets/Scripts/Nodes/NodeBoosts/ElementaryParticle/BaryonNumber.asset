@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: WeakNuclearInteraction
+  m_Name: BaryonNumber
   m_EditorClassIdentifier: Assembly-CSharp::NodeBoost
-  id: WeakNuclearInteraction
+  id: BaryonNumber
   scale: 0.5
-  active: 1
+  active: 0

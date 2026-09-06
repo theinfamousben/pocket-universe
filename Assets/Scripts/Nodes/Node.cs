@@ -19,7 +19,7 @@ namespace Nodes
         public TMP_Text nodeTitleObject;
         public TMP_Text nodeCostObject;
         public GameObject nodeObject;
-        public GameObject parentNode;
+        public List<GameObject> parentNodes;
     
         public int nodeLevel;
         public float baseCost;
@@ -57,36 +57,34 @@ namespace Nodes
             nodeCostObject.gameObject.transform.localScale = Constants.NODE_COST_TEXT_SCALE;
             
             Controller.RegisterNode(this);
-            DrawLineToParent();
+            DrawLinesToParents();
             lr.enabled = true;
         }
 
         public void ClickAction()
         {
-            if (Controller.SelectedNode == id) BuyNode();
-            else Controller.SetSelectedNode(id);
+            if (Controller.SelectedNode != id) Controller.SetSelectedNode(id);
+            else BuyNode();
         }
     
         public void Update()
         {
-            if (parentNode)
+            if (parentNodes.Count > 0)
             {
-                if (parentNode.GetComponent<Node>().unlocked)
+                int numOfUnlocked = 0;
+                int numOfBought = 0;
+                
+                foreach (var node in parentNodes)
                 {
-                    visible = true;
-                    lr.enabled = true;
-                    
+                    if (node.GetComponent<Node>().nodeLevel >= 1) numOfBought++;
+                    if (node.GetComponent<Node>().unlocked) numOfUnlocked++;
+                }
 
-                    if (parentNode.GetComponent<Node>().nodeLevel >= 1)
-                    {
-                        unlocked = true;
-                    }
-                }
-                else
-                {
-                    unlocked = false;
-                    visible = false;
-                }
+                
+                
+                visible = numOfUnlocked == parentNodes.Count;
+                unlocked = numOfBought == parentNodes.Count;
+                lr.enabled = visible;
             }
 
             var block = button.colors;
@@ -109,18 +107,17 @@ namespace Nodes
             ExecuteUniqueUpdateFunction();
         }
 
-        private void DrawLineToParent()
+        private void DrawLinesToParents()
         {
-            if (parentNode == null) return;
+            if (parentNodes.Count == 0) return;
+            lr.positionCount = parentNodes.Count * 2;
 
+            for (int i = 0; i < parentNodes.Count; i++)
+            {
+                lr.SetPosition(2*i, transform.position);
+                lr.SetPosition(2*i+1, parentNodes[i].transform.position);
+            }
 
-            lr.positionCount = 2;
-            lr.SetPosition(0, transform.position);
-            lr.SetPosition(1, parentNode.transform.position);
         }
-        
-        public string GetTitle() => title;
-        public float GetNodeLevel() => nodeLevel;
-        public float GetCost() => CalculateCost();
     }
 }
