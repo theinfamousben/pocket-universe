@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.UI;
+using UnityEngine.UI;
 using UnityEngine;
 
 namespace Nodes
@@ -13,6 +13,9 @@ namespace Nodes
         public Resource resource;
         public float baseTimeout;
         public List<NodeBoost> boosts;
+        
+        public float energyCost;
+        public float quarkCost;
         
         public override float CalculateCost() => baseCost * Mathf.Pow(costMultiplier, nodeLevel);
         

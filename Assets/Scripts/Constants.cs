@@ -23,6 +23,8 @@ public static class Constants
         { "WeakNuclearInteraction", "The weak nuclear interaction is the fundamental force responsible for certain types of radioactive decay and particle interactions."},
         { "GravitationalInteraction", "The gravitational interaction is the fundamental force responsible for the attraction between objects with mass."},
         { "BaryonNumber", "The baryon number is a conserved quantum number that represents the difference between the number of baryons and antibaryons in a system."},
+        { "Photon", "The photon is a scalar boson which carries the propagation of light." },
+        { "QuarkColors", "Quark Colors dictate how quarks interact with the strong nuclear force." },
     };
 
     public static readonly Dictionary<string, string> NodeInfoEffectText = new Dictionary<string, string>
@@ -31,12 +33,18 @@ public static class Constants
         
         // GENERATORS
         { "FundamentalInteraction", "Generates a Base of 1 Energy per second."},
+        { "ElementaryParticle", "Generates a Base of 10 Energy per second."},
+        { "Quark", "Generates a Base of 30 Energy per second."},
+        { "Boson", "Generates a Base of 50 Energy per second."},
         
         // UPGRADES
         { "StrongNuclearInteraction", "Fundamental Interaction 30% more efficient"},
         { "WeakNuclearInteraction", "Fundamental Interaction 50% more efficient"},
         { "ElectromagneticInteraction", "Fundamental Interaction 75% more efficient" },
         { "GravitationalInteraction", "Fundamental Interaction 100% more efficient" },
+        { "BaryonNumber", "Elementary Particle 50% more efficient" },
+        { "Photon", "Elementary Particle 70% more efficient" },
+        { "QuarkColors", "Elementary Particle 100% more efficient" },
     };
 
     public static readonly Vector3 NODE_SIZE_GENERATOR = new Vector3( 1f, 1f, 1f );
@@ -58,18 +66,14 @@ public static class Constants
     public static readonly Color NODE_BUTTON_COLOR_DISABLED = new Color(0.7843137255f, 0.7843137255f, 0.7843137255f, 0.5019607843f);
     public static readonly Color NODE_BUTTON_COLOR_HIGHLIGHTED = new Color(1f, 1f, 1f, 1f);
     public static readonly Color NODE_BUTTON_COLOR_SELECTED = new Color(0f, 1f, 1f, 1f);
+    
+    public static readonly Vector3 VECTOR3_2 = new Vector3( 2f, 2f, 2f );
 }
 
 public enum Resource
 {
     Energy,
     Quark
-}
-
-public enum MType
-{
-    Test,
-    Alert
 }
 
 public enum SceneType
@@ -85,14 +89,6 @@ public static class EnumUtil {
     }
 }
 
-[CreateAssetMenu(menuName = "ScriptableObjects/NodeBoost")]
-public class NodeBoost : ScriptableObject
-{
-    public string id;
-    public float scale;
-    public bool active;
-}
-
 public class T_Property
 {
     public string text;
@@ -105,4 +101,11 @@ public enum NodeType
 {
     Generator,
     Upgrade
+}
+
+public class Objective
+{
+    public string id;
+    public string title;
+    
 }

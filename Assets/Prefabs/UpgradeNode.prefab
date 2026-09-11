@@ -271,15 +271,11 @@ MonoBehaviour:
   button: {fileID: 2544333403151145615}
   nodeTitleObject: {fileID: 8256567703973282516}
   nodeCostObject: {fileID: 7465140048530898763}
-  nodeObject: {fileID: 2973062460387464418}
-  parentNode: {fileID: 0}
+  parentNodes: []
   nodeLevel: 0
   baseCost: 0
   costMultiplier: 0
-  sprite: {fileID: 0}
-  energyCost: 0
-  quarkCost: 0
-  generatorId: 
+  appendedGenerator: 
   relatedBoost: {fileID: 0}
 --- !u!1 &4666018385696214398
 GameObject:

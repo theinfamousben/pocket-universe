@@ -7,8 +7,8 @@ using Nodes;
 public class Controller : MonoBehaviour
 {
     public static double Energy;
-    public static double Quarks;
     public static List<Generator> Generators = new();
+    public static List<Objective> Objectives = new();
     public static List<Node> Nodes = new();
     public static string SelectedNode = "none";
     
@@ -20,25 +20,23 @@ public class Controller : MonoBehaviour
     
 
     [SerializeField] private TMP_Text energyText;
-    [SerializeField] private TMP_Text quarkText;
-
+    
     void Start()
     {
         SelectedNode = "none";
         Energy = startingEnergy;
-        Quarks = startingQuarks;
         
         energyText.text = "Energy: 0";
-        quarkText.text = "Quarks: 0";
 
         testModal.Close();
         alertModal.Close();
-        
-        
-        // TO REMOVE
-        quarkText.gameObject.transform.localScale = Vector3.zero;
 
         //AddGenerator("Energy", 100, 1, Resource.Energy, new List<NodeBoost>());
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     void Update()
@@ -49,7 +47,6 @@ public class Controller : MonoBehaviour
         }
 
         energyText.text = "Energy: " + Energy.ToString("F2");
-        quarkText.text = "Quarks: " + Quarks.ToString("F2");
     }
     
     public static void AddResource(double amount, Resource resource)
@@ -58,9 +55,6 @@ public class Controller : MonoBehaviour
         {
             case Resource.Energy:
                 Energy += amount;
-                break;
-            case Resource.Quark:
-                Quarks += amount;
                 break;
             default:
                 Logger.AddLog($"Unknown Resource: {resource}", $"Controller.AddResource", 3, true);
@@ -74,9 +68,6 @@ public class Controller : MonoBehaviour
         {
             case Resource.Energy:
                 Energy -= amount;
-                break;
-            case Resource.Quark:
-                Quarks -= amount;
                 break;
             default: 
                 Logger.AddLog($"Unknown Resource: {resource}", $"Controller.SubtractResource", 3, true); 

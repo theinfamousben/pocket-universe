@@ -5,7 +5,7 @@ namespace Nodes
 {
     public class UpgradeNode : Node
     {
-        public string generatorId;
+        public string appendedGenerator;
         public NodeBoost relatedBoost;
 
         public override float CalculateCost() => baseCost;
@@ -23,7 +23,7 @@ namespace Nodes
 
             foreach (Generator generator in Controller.Generators)
             {
-                if (generator.id.StartsWith(generatorId))
+                if (generator.id.StartsWith(appendedGenerator))
                 {
                     relatedBoost.active = true;
                 }

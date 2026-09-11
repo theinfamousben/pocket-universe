@@ -29,15 +29,25 @@ public class Generator
     private void Generate()
     {
         if (Controller.Energy < energyCost) return;
-        if (Controller.Quarks < quarkCost) return;
         
         Controller.SubtractResource(energyCost, Resource.Energy);
-        Controller.SubtractResource(quarkCost, Resource.Quark);
+        if (quarkCost > 0)
+            Controller.SubtractResource(quarkCost, Resource.Quark);
         
         float _b = 1;
-        foreach (NodeBoost boost in boosts)
+        if (boosts != null)
         {
-            _b *= 1 + (boost.active ? boost.scale : 0); // still not sure whether to multiply or add the boosts together...
+            foreach (NodeBoost boost in boosts)
+            {
+                if (boost != null && boost.active)
+                    _b *= 1 + boost.scale;
+            }
+        }
+        
+        if (resource != Resource.Energy && resource != Resource.Quark)
+        {
+            Logger.AddLog($"Invalid resource type: {resource}", $"Generator.Generate ({id})", 3, true);
+            return;
         }
         
         Logger.AddLog($"Adding {amountToGenerate * _b} {resource}; Boost multiplier: {_b}", $"Generator.Generate ({id})", 0);

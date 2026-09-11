@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <title>Photon</title>
+  <rect width="256" height="256" rx="32" fill="#111827"/>
+  <rect x="8" y="8" width="240" height="240" rx="26" stroke="#334155" stroke-width="4"/>
+  <path d="M35 128C52 89 71 89 88 128C105 167 124 167 141 128C158 89 177 89 194 128" stroke="#F8FAFC" stroke-width="11" stroke-linecap="round"/>
+  <path d="M35 128C52 167 71 167 88 128C105 89 124 89 141 128C158 167 177 167 194 128" stroke="#FDE047" stroke-width="6" stroke-linecap="round"/>
+  <path d="M194 128L216 128M40 84L29 73M40 172L29 183" stroke="#FDE047" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="35" cy="128" r="9" fill="#FDE047"/>
+  <circle cx="194" cy="128" r="9" fill="#FDE047"/>
+</svg>

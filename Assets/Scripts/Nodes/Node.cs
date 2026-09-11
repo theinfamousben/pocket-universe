@@ -18,16 +18,11 @@ namespace Nodes
 
         public TMP_Text nodeTitleObject;
         public TMP_Text nodeCostObject;
-        public GameObject nodeObject;
         public List<GameObject> parentNodes;
     
         public int nodeLevel;
         public float baseCost;
         public float costMultiplier;
-        public Sprite sprite;
-
-        public float energyCost;
-        public float quarkCost;
         
         public abstract float CalculateCost();
         public abstract void BuyNode();
@@ -66,7 +61,7 @@ namespace Nodes
             if (Controller.SelectedNode != id) Controller.SetSelectedNode(id);
             else BuyNode();
         }
-    
+        
         public void Update()
         {
             if (parentNodes.Count > 0)
@@ -79,8 +74,6 @@ namespace Nodes
                     if (node.GetComponent<Node>().nodeLevel >= 1) numOfBought++;
                     if (node.GetComponent<Node>().unlocked) numOfUnlocked++;
                 }
-
-                
                 
                 visible = numOfUnlocked == parentNodes.Count;
                 unlocked = numOfBought == parentNodes.Count;
@@ -95,11 +88,11 @@ namespace Nodes
             
             if (!visible)
             {
-                nodeObject.transform.localScale = Vector3.zero;
+                transform.localScale = Vector3.zero;
                 lr.enabled = false;
                 return;
             }
-            nodeObject.transform.localScale = scale;
+            transform.localScale = scale;
             
             nodeTitleObject.text = FormatTitle();
             nodeCostObject.text = unlocked ? $"{CalculateCost()} Energy" : "Locked";
