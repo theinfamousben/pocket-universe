@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using Nodes;
 using UnityEngine;
 
 public class Generator
 {
-    // The Logic for the generator is a bit weird, but changing it would take effort and im too lazy right now :p
+    // The Logic for the generator is a bit weird, but changing it would take effort, and I'm too lazy right now :p
     // so to future me or anyone who dares to look at this shitty code, here is a little crash course:
-    // Each generator is instantiated by Controller, who sets all of the required variables and puts them in a single
+    // Each generator is instantiated by Controller, who sets all the required variables and puts them in a single
     // list. The list is only to be interacted with through Controller.FindGenerator(), because it isn't organized at all.
     // Why is it like this? Convenience. Writing this comment seems easier than reworking the entire Logic for generators.
     
@@ -34,13 +33,13 @@ public class Generator
         if (quarkCost > 0)
             Controller.SubtractResource(quarkCost, Resource.Quark);
         
-        float _b = 1;
+        float b = 1;
         if (boosts != null)
         {
             foreach (NodeBoost boost in boosts)
             {
-                if (boost != null && boost.active)
-                    _b *= 1 + boost.scale;
+                if (boost && boost.active)
+                    b *= 1 + boost.scale;
             }
         }
         
@@ -50,8 +49,8 @@ public class Generator
             return;
         }
         
-        Logger.AddLog($"Adding {amountToGenerate * _b} {resource}; Boost multiplier: {_b}", $"Generator.Generate ({id})", 0);
-        Controller.AddResource(amountToGenerate * _b, resource);
+        Logger.AddLog($"Adding {amountToGenerate * b} {resource}; Boost multiplier: {b}", $"Generator.Generate ({id})", 0);
+        Controller.AddResource(amountToGenerate * b, resource);
         timer = 0;
     }
 

@@ -25,10 +25,10 @@ namespace Nodes
         public float costMultiplier;
         
         public abstract float CalculateCost();
-        public abstract void BuyNode();
-        public abstract string FormatTitle();
-        public abstract void ExecuteUniqueUpdateFunction();
-        public abstract void ExecuteUniqueStartFunction();
+        protected abstract void BuyNode();
+        protected abstract string FormatTitle();
+        protected abstract void ExecuteUniqueUpdateFunction();
+        protected abstract void ExecuteUniqueStartFunction();
         
         public void Start()
         {

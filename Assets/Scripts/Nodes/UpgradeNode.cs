@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 namespace Nodes
 {
@@ -10,7 +9,7 @@ namespace Nodes
 
         public override float CalculateCost() => baseCost;
 
-        public override void BuyNode()
+        protected override void BuyNode()
         {
             Logger.AddLog($"Requested buy node", $"UpgradeNode.BuyNode ({id})", 0);
 
@@ -30,12 +29,12 @@ namespace Nodes
             }
         }
 
-        public override void ExecuteUniqueStartFunction()
+        protected override void ExecuteUniqueStartFunction()
         {
             relatedBoost.active = false;
         }
-        
-        public override void ExecuteUniqueUpdateFunction()
+
+        protected override void ExecuteUniqueUpdateFunction()
         {
             if (nodeLevel >= 1)
             {
@@ -43,6 +42,6 @@ namespace Nodes
             }
         }
 
-        public override string FormatTitle() => $"{title}";
+        protected override string FormatTitle() => $"{title}";
     }
 }

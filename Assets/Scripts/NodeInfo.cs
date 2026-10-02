@@ -37,12 +37,12 @@ public class NodeInfo : MonoBehaviour
         var node = Controller.FindNodeById(Controller.SelectedNode);
         
         title = node.title;
-        description = Constants.NodeInfoDescriptionText[node.id];
+        description = Constants.NODE_INFO_DESCRIPTION_TEXT[node.id];
 
         effectText.gameObject.transform.localScale = Vector3.one;
         try
         {
-            effect = Constants.NodeInfoEffectText[node.id];
+            effect = Constants.NODE_INFO_EFFECT_TEXT[node.id];
         }
         catch (Exception e)
         {

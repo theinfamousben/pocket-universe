@@ -7,7 +7,7 @@ using UnityEngine;
 
 public static class Constants
 {
-    public static readonly Dictionary<string, string> NodeInfoDescriptionText = new Dictionary<string, string>
+    public static readonly Dictionary<string, string> NODE_INFO_DESCRIPTION_TEXT = new Dictionary<string, string>
     {
         { "Test", "Test text, blah blah blah" },
         
@@ -27,7 +27,7 @@ public static class Constants
         { "QuarkColors", "Quark Colors dictate how quarks interact with the strong nuclear force." },
     };
 
-    public static readonly Dictionary<string, string> NodeInfoEffectText = new Dictionary<string, string>
+    public static readonly Dictionary<string, string> NODE_INFO_EFFECT_TEXT = new Dictionary<string, string>
     {
         {"Test", "Test Blah blah"},
         
@@ -103,7 +103,7 @@ public enum NodeType
     Upgrade
 }
 
-public class Objective
+public abstract class Objective
 {
     public string id;
     public string title;

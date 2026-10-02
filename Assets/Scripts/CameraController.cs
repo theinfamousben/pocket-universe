@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] private float epsilon;
     [SerializeField] private float dragThreshold = 6f;
-    [SerializeField] float scrollSpeed;
+    [SerializeField] private float scrollSpeed;
     [SerializeField] private float minZoom;
     [SerializeField] private float maxZoom;
     
@@ -47,7 +47,7 @@ public class CameraController : MonoBehaviour
 
             if (!Dragging)
             {
-                if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                if (EventSystem.current && EventSystem.current.IsPointerOverGameObject())
                 {
                     return;
                 }

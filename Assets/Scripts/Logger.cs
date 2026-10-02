@@ -46,8 +46,8 @@ public class Logger : MonoBehaviour
 
         if (createModal)
         {
-            Controller controller = GameObject.FindObjectOfType<Controller>();
-            if (controller == null)
+            Controller controller = FindFirstObjectByType<Controller>();
+            if (!controller)
             {
                 Debug.LogError("Logger.AddLog: Controller not found for modal creation.");
                 return;

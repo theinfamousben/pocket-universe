@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using TMPro;
-using UnityEngine.UI;
 using UnityEngine;
 
 namespace Nodes
@@ -18,8 +16,8 @@ namespace Nodes
         public float quarkCost;
         
         public override float CalculateCost() => baseCost * Mathf.Pow(costMultiplier, nodeLevel);
-        
-        public override void BuyNode()
+
+        protected override void BuyNode()
         {
             if (CameraController.Dragging) return;
             
@@ -44,16 +42,16 @@ namespace Nodes
             assignedGenerators.Add($"{id}_{nodeLevel}");
         }
 
-        public override void ExecuteUniqueStartFunction()
+        protected override void ExecuteUniqueStartFunction()
         {
             return;
         }
 
-        public override void ExecuteUniqueUpdateFunction()
+        protected override void ExecuteUniqueUpdateFunction()
         {
             return;
         }
-        
-        public override string FormatTitle() => $"{title} (L{nodeLevel})";
+
+        protected override string FormatTitle() => $"{title} (L{nodeLevel})";
     }
 }
